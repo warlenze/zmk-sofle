@@ -31,8 +31,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            display-name = "Sofle";
+        base_layer {
+            display-name = "base";
 
             // ------------------------------------------------------------------------------------------------------------
             // |  ESC  |  1!  |  2@  |  3#  |  4$  |  5%  |                   |  6^  |  7&   |  8*   |  9(  |   0)  |   -_  |
@@ -42,17 +42,17 @@
             //                | GUI  | ALT  | CTRL | LOWER|  SPACE |  | ENTER | RAISE|  ALT  | CTRL  | GUI  |
 
             bindings = <
-&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                            &kp N6  &kp N7         &kp N8            &kp N9             &kp N0     &kp MINUS
-&kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                             &kp Y   &kp U          &kp I             &kp O              &kp P      &kp EQUAL
-&kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                             &kp H   &kp J          &kp K             &kp L              &kp SEMI   &kp SQT
-&kp LCTRL  &kp Z   &kp X     &kp C     &kp V      &kp B   &kp C_MUTE    &kp C_PLAY  &kp N   &kp M          &kp COMMA         &kp DOT            &kp SLASH  &kp BSLH
-                   &kp LGUI  &kp LALT  &kp SPACE  &mo 1   &kp SPACE     &kp ENTER   &mo 2   &kp BACKSPACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                             &kp N6  &kp N7         &kp N8            &kp N9             &kp N0     &kp MINUS
+&kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                              &kp Y   &kp U          &kp I             &kp O              &kp P      &kp EQUAL
+&kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                              &kp H   &kp J          &kp K             &kp L              &kp SEMI   &kp SQT
+&kp LCTRL  &kp Z   &kp X     &kp C     &kp V      &kp B   &kp C_MUTE     &kp C_PLAY  &kp N   &kp M          &kp COMMA         &kp DOT            &kp SLASH  &kp BSLH
+                   &kp LGUI  &kp LALT  &kp SPACE  &mo 1   &lt 4 ENTER    &kp ENTER   &mo 2   &kp BACKSPACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREVIOUS>;
         };
 
-        lower_layer {
+        num_layer {
             display-name = "num";
 
             // TODO: Some binds are waiting for shifted keycode support.
@@ -74,7 +74,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        raise_layer {
+        nav_layer {
             display-name = "nav";
 
             // ------------------------------------------------------------------------------------------------------------
@@ -95,7 +95,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        adjust_layer {
+        rgb_layer {
             // ----------------------------------------------------------------------------------------------------------------------------
             // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
             // |        | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
@@ -103,7 +103,7 @@
             // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
             //                    |         |         |         |         |         | |      |      |      |       |      |
 
-            display-name = "adjust";
+            display-name = "rgb";
             bindings = <
 &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                     &none  &none  &none  &none  &none  &none
 &trans          &none         &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF                  &none  &none  &none  &none  &none  &none
@@ -113,13 +113,13 @@
             >;
         };
 
-        layer_4 {
+        sym_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans           &trans        &trans       &trans        &trans                    &trans  &trans  &trans                   &trans                 &trans  &trans
+&trans  &trans           &trans        &trans       &trans        &trans                    &trans  &trans  &kp LEFT_BRACKET         &kp RIGHT_BRACKET      &trans  &trans
+&trans  &kp EXCLAMATION  &kp KP_MINUS  &kp KP_PLUS  &kp KP_EQUAL  &trans                    &trans  &trans  &kp KP_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
+&trans  &trans           &trans        &trans       &trans        &trans  &trans    &trans  &trans  &trans  &kp LEFT_BRACE           &kp RIGHT_BRACE        &trans  &trans
+                         &trans        &trans       &trans        &trans  &trans    &trans  &trans  &trans  &trans                   &trans
             >;
         };
     };
