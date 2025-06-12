@@ -138,8 +138,7 @@
         };
 
         game_layer {
-            label = "game";
-            display-name = "base";
+            display-name = "game";
             bindings = <
 &kp ESC  &kp N5     &kp N1    &kp N2    &kp N3     &kp N4                              &kp N6  &kp N7         &kp N8            &kp N9             &kp N0     &to 0
 &kp T    &kp TAB    &kp Q     &kp W     &kp E      &kp R                               &kp Y   &kp U          &kp I             &kp O              &kp P      &kp EQUAL
