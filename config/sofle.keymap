@@ -25,8 +25,8 @@
         compatible = "zmk,conditional-layers";
 
         rgb_layer {
-            if-layers = <NUM NAV>;
-            then-layer = <RGB>;
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 
@@ -48,7 +48,7 @@
 &kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                               &kp Y   &kp U          &kp I             &kp O              &kp P      &kp EQUAL
 &kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                               &kp H   &kp J          &kp K             &kp L              &kp SEMI   &kp SQT
 &kp LCTRL  &kp Z   &kp X     &kp C     &kp V      &kp B   &kp C_MUTE     &kp C_PLAY   &kp N   &kp M          &kp COMMA         &kp DOT            &kp SLASH  &kp BSLH
-                   &kp LGUI  &kp LALT  &kp SPACE  &mo 1   &lt 5 ENTER    &lt 4 ENTER  &mo 2   &kp BACKSPACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+                   &kp LGUI  &kp LALT  &kp SPACE  &mo 1   &lt 4 ENTER    &lt 5 ENTER  &mo 2   &kp BACKSPACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREVIOUS>;
@@ -115,17 +115,6 @@
             >;
         };
 
-        sym_layer {
-            display-name = "sym";
-            bindings = <
-&trans  &trans           &trans        &trans       &trans        &trans                    &trans  &trans  &trans                   &trans                 &trans  &trans
-&trans  &trans           &trans        &trans       &trans        &trans                    &trans  &trans  &kp LEFT_BRACKET         &kp RIGHT_BRACKET      &trans  &trans
-&trans  &kp EXCLAMATION  &kp KP_MINUS  &kp KP_PLUS  &kp KP_EQUAL  &trans                    &trans  &trans  &kp KP_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
-&trans  &trans           &trans        &trans       &trans        &trans  &trans    &trans  &trans  &trans  &kp LEFT_BRACE           &kp RIGHT_BRACE        &trans  &trans
-                         &trans        &trans       &trans        &trans  &trans    &trans  &trans  &trans  &trans                   &trans
-            >;
-        };
-
         mouse_layer {
             display-name = "mouse";
             bindings = <
@@ -134,6 +123,17 @@
 &none  &none  &none  &none  &none  &none                       &none      &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
 &none  &none  &none  &none  &none  &none  &none     &none      &none      &msc SCRL_LEFT  &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none
               &none  &none  &none  &none  &trans    &mkp RCLK  &mkp LCLK  &mkp MCLK       &none         &none
+            >;
+        };
+
+        sym_layer {
+            display-name = "sym";
+            bindings = <
+&trans  &trans           &trans        &trans       &trans        &trans                    &trans  &trans  &trans                   &trans                 &trans  &trans
+&trans  &trans           &trans        &trans       &trans        &trans                    &trans  &trans  &kp LEFT_BRACKET         &kp RIGHT_BRACKET      &trans  &trans
+&trans  &kp EXCLAMATION  &kp KP_MINUS  &kp KP_PLUS  &kp KP_EQUAL  &trans                    &trans  &trans  &kp KP_LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans  &trans
+&trans  &trans           &trans        &trans       &trans        &trans  &trans    &trans  &trans  &trans  &kp LEFT_BRACE           &kp RIGHT_BRACE        &trans  &trans
+                         &trans        &trans       &trans        &trans  &trans    &trans  &trans  &trans  &trans                   &trans
             >;
         };
     };
