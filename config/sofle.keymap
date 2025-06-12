@@ -16,6 +16,7 @@
 #define NAV 2
 #define RGB 3
 #define SYM 4
+#define MOUSE 5
 
 / {
     // Activate ADJUST layer by pressing raise and lower
@@ -126,6 +127,7 @@
         };
 
         mouse_layer {
+            display-name = "mouse";
             bindings = <
 &none  &none  &none  &none  &none  &none                      &none      &none           &none         &none           &none            &none
 &none  &none  &none  &none  &none  &none                      &none      &kp K_PASTE     &kp K_COPY    &kp K_CUT       &none            &none
