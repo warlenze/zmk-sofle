@@ -14,9 +14,10 @@
 #define BASE 0
 #define NUM 1
 #define NAV 2
-#define RGB 3
+#define MOUS 3
 #define SYM 4
-#define MOUSE 5
+#define RGB 5
+#define GAME 6
 
 / {
     // Activate ADJUST layer by pressing raise and lower
@@ -34,14 +35,14 @@
         set_game_layer: set_game_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 6 &rgb_ug RGB_COLOR_HSB(313,100,50)>;
+            bindings = <&to 6 &rgb_ug RGB_COLOR_HSB(310,100,20)>;
             label = "SET_GAME_LAYER";
         };
 
         set_base_layer: set_base_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &rgb_ug RGB_COLOR_HSB(210,100,50)>;
+            bindings = <&to 0 &rgb_ug RGB_COLOR_HSB(210,100,20)>;
             label = "SET_BASE_LAYER";
         };
     };
@@ -51,14 +52,6 @@
 
         base_layer {
             display-name = "base";
-
-            // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1!  |  2@  |  3#  |  4$  |  5%  |                   |  6^  |  7&   |  8*   |  9(  |   0)  |   -_  |
-            // |  TAB  |  Q   |  W   |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
-            // | SHIFT |  A   |  S   |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;:  |   '"  |
-            // | CTRL  |  Z   |  X   |  C   |  V   |  B   |  MUTE  |  | PLAY  |  N   |  M    |  ,<   |  .>  |   /?  |   \|  |
-            //                | GUI  | ALT  | CTRL | LOWER|  SPACE |  | ENTER | RAISE|  ALT  | CTRL  | GUI  |
-
             bindings = <
 &kp ESC    &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                              &kp N6        &kp N7         &kp N8            &kp N9             &kp N0     &set_game_layer
 &kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                               &kp Y         &kp U          &kp I             &kp O              &kp P      &kp EQUAL
@@ -67,20 +60,13 @@
                    &kp LGUI  &kp LALT  &kp SPACE  &mo 1   &lt 3 ENTER    &lt 4 ENTER  &lt 2 DELETE  &kp BACKSPACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREVIOUS>;
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp C_NEXT C_PREVIOUS>;
         };
 
         num_layer {
             display-name = "num";
-
-            // TODO: Some binds are waiting for shifted keycode support.
-            // ------------------------------------------------------------------------------------------------------------
-            // |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |                   |  F7  |  F8   |  F9   |  F10 |  F11  |  F12  |
-            // | LGUI  |     | up  |      | RGB  |modRGB|                   |      |  1    |  2    |  3   |  PGUP |  PGDN |
-            // | ESC   |  L  | dn  |  R   | hue- | hue+ |                   |      |  4    |  5    |  6   |  HOME |  END  |
-            // | PSCRN |ZMKST|     |      | Bri- | Bri+ |        |  |       |      |  7    |  8    |  9   |       |ZMKSTUD|
-            //               | mo2 | alt  | SHF  | DEL  |  BSPC  |  | ENTER | SPACE|       |  0    |      |
-
             bindings = <
 &studio_unlock   &kp F1     &kp F2  &kp F3    &kp F4     &kp F5                          &kp F6           &kp F7         &kp F8  &kp F9      &kp F10       &kp F11
 &kp PRINTSCREEN  &none      &kp F7  &kp F8    &kp F9     &kp F12                         &kp KP_MULTIPLY  &kp N7         &kp N8  &kp N9      &kp KP_MINUS  &kp F12
@@ -94,14 +80,6 @@
 
         nav_layer {
             display-name = "nav";
-
-            // ------------------------------------------------------------------------------------------------------------
-            // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-            // |       | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
-            // |       | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-            // |       | UNDO | CUT  | COPY  | PASTE |      |      |  |      |      |      |       |      |       |       |
-            //                |      |       |       |      |      |  |      |      |      |       |      |
-
             bindings = <
 &none   &none      &none      &none      &none      &none                        &trans     &trans    &trans    &trans     &trans   &trans
 &trans  &kp INS    &none      &none      &trans     &trans                       &kp PG_UP  &kp HOME  &kp UP    &kp END    &none    &trans
@@ -109,8 +87,6 @@
 &trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)  &trans    &trans  &none      &none     &none     &none      &trans   &trans
                    &trans     &trans     &trans     &trans     &trans    &trans  &trans     &trans    &trans    &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         mouse_layer {
@@ -136,13 +112,6 @@
         };
 
         rgb_layer {
-            // ----------------------------------------------------------------------------------------------------------------------------
-            // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
-            // |        | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
-            // |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
-            // |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
-            //                    |         |         |         |         |         | |      |      |      |       |      |
-
             display-name = "rgb";
             bindings = <
 &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                     &none  &none  &none  &none  &none  &none
@@ -162,10 +131,6 @@
 &kp B    &kp LCTRL  &kp Z     &kp X     &kp C      &kp V   &kp C_MUTE     &kp C_PLAY   &kp N   &kp M          &kp COMMA         &kp DOT            &kp SLASH  &kp BSLH
                     &kp LGUI  &kp LALT  &kp SPACE  &mo 1   &lt 3 ENTER    &lt 4 ENTER  &mo 2   &kp BACKSPACE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
             >;
-
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp C_NEXT C_PREVIOUS>;
         };
     };
 };
