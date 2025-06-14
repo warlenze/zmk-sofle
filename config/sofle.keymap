@@ -103,7 +103,7 @@
         sym_layer {
             display-name = "sym";
             bindings = <
-&none   &none            &none          &none             &none          &none                          &none       &none                 &none                  &none       &none              &bootloader
+&none   &none            &none          &none             &none          &none                          &none       &none                 &none                  &none       &none              &none
 &none   &kp HASH         &kp ASTERISK   &kp SLASH         &kp PIPE       &kp CARET                      &kp DOLLAR  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDER   &kp DOUBLE_QUOTES  &none
 &trans  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL      &kp PERCENT                    &kp HASH    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT      &kp QUESTION       &kp DOUBLE_QUOTES
 &trans  &kp BACKSLASH    &kp LESS_THAN  &kp GREATER_THAN  &kp AMPERSAND  &kp TILDE    &trans    &trans  &kp AT      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERIOD  &kp COLON          &none
@@ -114,7 +114,7 @@
         rgb_layer {
             display-name = "rgb";
             bindings = <
-&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                       &none   &none  &none  &none  &none  &none
+&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                       &none   &none  &none  &none  &none  &bootloader
 &none           &none         &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF                    &none   &none  &none  &none  &none  &none
 &none           &none         &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                    &none   &none  &none  &none  &none  &none
 &studio_unlock  &none         &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none            &none            &trans    &trans  &none   &none  &none  &none  &none  &none
