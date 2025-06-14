@@ -92,11 +92,11 @@
         mouse_layer {
             display-name = "mouse";
             bindings = <
-&bootloader  &none      &none      &none      &none      &none                           &none           &none           &none           &none            &none          &none
-&none        &none      &none      &none      &none      &none                           &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none          &none
-&trans       &kp LC(Y)  &kp LALT   &kp LCTRL  &kp LSHFT  &none                           &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp BACKSPACE  &none
-&trans       &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)  &trans       &trans  &none           &mkp LCLK       &mkp RCLK       &mkp MCLK        &kp DELETE     &none
-                        &none      &trans     &mkp MCLK  &mkp LCLK  &mkp RCLK    &none   &none           &none           &none           &none
+&none   &none      &none      &none      &none      &none                           &none           &none           &none           &none            &none          &bootloader
+&none   &none      &none      &none      &none      &none                           &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none          &none
+&trans  &kp LC(Y)  &kp LALT   &kp LCTRL  &kp LSHFT  &none                           &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp BACKSPACE  &none
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)  &trans       &trans  &none           &mkp LCLK       &mkp RCLK       &mkp MCLK        &kp DELETE     &none
+                   &none      &trans     &mkp MCLK  &mkp LCLK  &mkp RCLK    &none   &none           &none           &none           &none
             >;
         };
 
@@ -114,8 +114,8 @@
         rgb_layer {
             display-name = "rgb";
             bindings = <
-&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                       &none   &none  &none  &none  &none  &bootloader
-&none           &none         &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF                    &none   &none  &none  &none  &none  &none
+&bootloader     &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                       &none   &none  &none  &none  &none  &none
+&none           &bt BT_CLR    &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF                    &none   &none  &none  &none  &none  &none
 &none           &none         &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                    &none   &none  &none  &none  &none  &none
 &studio_unlock  &none         &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none            &none            &trans    &trans  &none   &none  &none  &none  &none  &none
                               &none            &none            &none            &trans           &trans    &trans  &trans  &none  &none  &none
