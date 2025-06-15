@@ -26,8 +26,13 @@
         compatible = "zmk,conditional-layers";
 
         sym_layer {
-            if-layers = <2 1>;
+            if-layers = <1 2>;
             then-layer = <4>;
+        };
+
+        rgb_layer {
+            if-layers = <7 3>;
+            then-layer = <5>;
         };
     };
 
@@ -71,7 +76,7 @@
 &kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                                    &kp Y            &kp U          &kp I             &kp O       &kp P           &kp CAPS
 &kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                                    &kp H            &kp J          &kp K             &kp L       &kp APOSTROPHE  &kp RIGHT_SHIFT
 &kp LCTRL  &kp Z   &kp X     &kp C     &kp V      &kp B        &kp C_MUTE     &kp C_PLAY   &kp N            &kp M          &kp COMMA         &kp DOT     &kp SEMI        &kp RIGHT_CONTROL
-                   &kp LGUI  &kp LALT  &kp SPACE  &lt 1 SPACE  &lt 5 ENTER    &lt 3 ENTER  &lt 2 BACKSPACE  &kp BACKSPACE  &kp LEFT_CONTROL  &caps_word
+                   &kp LGUI  &kp LALT  &kp SPACE  &lt 1 SPACE  &lt 7 ENTER    &lt 3 ENTER  &lt 2 BACKSPACE  &kp BACKSPACE  &kp LEFT_CONTROL  &caps_word
             >;
 
             sensor-bindings =
@@ -82,11 +87,11 @@
         num_layer {
             display-name = "num";
             bindings = <
-&studio_unlock   &kp F1     &kp F2  &kp F3    &kp F4  &kp F5                     &none            &none          &none   &none      &none            &none
-&kp PRINTSCREEN  &none      &kp F7  &kp F8    &kp F9  &kp F12                    &kp KP_DIVIDE    &kp N7         &kp N8  &kp N9     &kp KP_SUBTRACT  &none
-&kp LSHFT        &kp LC(Y)  &kp F4  &kp F5    &kp F6  &kp F11                    &kp KP_MULTIPLY  &kp N4         &kp N5  &kp N6     &kp KP_PLUS      &none
-&kp LCTRL        &kp LC(Z)  &kp F1  &kp F2    &kp F3  &kp F10  &trans    &trans  &kp N0           &kp N1         &kp N2  &kp N3     &kp KP_DOT       &kp C_AL_CALC
-                            &none   &kp LALT  &none   &trans   &trans    &trans  &trans           &kp BACKSPACE  &kp N0  &kp COLON
+&none            &none      &none   &none     &none   &kp BACKSPACE                    &none     &none          &none   &none    &none      &none
+&kp PRINTSCREEN  &kp MINUS  &kp N7  &kp N8    &kp N9  &kp FSLH                         &kp FSLH  &kp N7         &kp N8  &kp N9   &kp MINUS  &none
+&kp LSHFT        &kp PLUS   &kp N4  &kp N5    &kp N6  &kp STAR                         &kp STAR  &kp N4         &kp N5  &kp N6   &kp PLUS   &none
+&kp LCTRL        &kp N0     &kp N1  &kp N2    &kp N3  &kp DOT        &trans    &trans  &kp DOT   &kp N1         &kp N2  &kp N3   &kp N0     &kp C_AL_CALC
+                            &none   &kp LALT  &none   &trans         &trans    &trans  &trans    &kp BACKSPACE  &kp N0  &kp DOT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -106,7 +111,7 @@
         mouse_layer {
             display-name = "mouse";
             bindings = <
-&none   &none      &none      &none      &none      &none                           &none           &none           &none           &none            &none          &bootloader
+&none   &none      &none      &none      &none      &none                           &none           &none           &none           &none            &none          &none
 &none   &none      &none      &none      &none      &none                           &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none          &none
 &trans  &kp LC(Y)  &kp LALT   &kp LCTRL  &kp LSHFT  &none                           &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp BACKSPACE  &none
 &trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)  &trans       &trans  &none           &mkp LCLK       &mkp RCLK       &mkp MCLK        &kp DELETE     &none
@@ -117,11 +122,11 @@
         sym_layer {
             display-name = "sym";
             bindings = <
-&none   &none            &none          &none             &none          &none                          &none       &none                 &none                  &none       &none              &none
-&none   &kp HASH         &kp ASTERISK   &kp SLASH         &kp PIPE       &kp CARET                      &kp DOLLAR  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp UNDER   &kp DOUBLE_QUOTES  &none
-&trans  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL      &kp PERCENT                    &kp HASH    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT      &kp QUESTION       &kp DOUBLE_QUOTES
-&trans  &kp BACKSLASH    &kp LESS_THAN  &kp GREATER_THAN  &kp AMPERSAND  &kp TILDE    &trans    &trans  &kp AT      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERIOD  &kp COLON          &none
-                         &none          &trans            &none          &trans       &trans    &trans  &trans      &none                 &none                  &none
+&none   &none            &none          &none             &none          &none                          &none       &none              &none                  &none                 &none              &none
+&none   &kp HASH         &kp ASTERISK   &kp SLASH         &kp PIPE       &kp CARET                      &kp DOLLAR  &kp DOUBLE_QUOTES  &kp RIGHT_BRACE        &kp LEFT_BRACE        &kp DOUBLE_QUOTES  &none
+&trans  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL      &kp PERCENT                    &kp HASH    &kp AT             &kp RIGHT_PARENTHESIS  &kp LEFT_PARENTHESIS  &kp QUESTION       &none
+&trans  &kp BACKSLASH    &kp LESS_THAN  &kp GREATER_THAN  &kp AMPERSAND  &kp TILDE    &trans    &trans  &kp AT      &kp UNDER          &kp RIGHT_BRACKET      &kp LEFT_BRACKET      &kp COLON          &none
+                         &none          &trans            &none          &trans       &trans    &trans  &trans      &none              &none                  &none
             >;
         };
 
@@ -145,6 +150,21 @@
 &kp B    &kp LCTRL  &kp Z     &kp X     &kp C      &kp V   &kp C_MUTE     &kp C_PLAY   &kp N   &kp M          &kp COMMA         &kp DOT     &kp SEMICOLON   &kp RIGHT_CONTROL
                     &kp LGUI  &kp LALT  &kp SPACE  &mo 1   &lt 3 ENTER    &lt 5 ENTER  &mo 2   &kp BACKSPACE  &kp LEFT_CONTROL  &caps_word
             >;
+        };
+
+        fun_layer {
+            display-name = "fun";
+            bindings = <
+&studio_unlock   &none              &none   &none     &none   &none                      &none    &none    &none         &none    &none    &none
+&kp PRINTSCREEN  &kp LC(Y)          &kp F7  &kp F8    &kp F9  &kp F10                    &kp DOT  &kp DOT  &kp DOT       &kp DOT  &kp DOT  &none
+&kp LSHFT        &kp LC(BACKSPACE)  &kp F4  &kp F5    &kp F6  &kp F11                    &kp DOT  &kp DOT  &kp DOT       &kp DOT  &kp DOT  &kp LSHFT
+&kp LCTRL        &kp LC(Z)          &kp F1  &kp F2    &kp F3  &kp F12  &trans    &trans  &kp DOT  &kp DOT  &kp DOT       &kp DOT  &kp DOT  &kp LCTRL
+                                    &none   &kp LALT  &none   &trans   &trans    &trans  &trans   &kp DOT  &kp LEFT_ALT  &kp DOT
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
