@@ -59,6 +59,8 @@
         sym_tog {
             bindings = <&tog 6>;
             key-positions = <52 57>;
+            layers = <0 6>;
+            timeout-ms = <200>;
         };
     };
 
