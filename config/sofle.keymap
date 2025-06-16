@@ -27,13 +27,13 @@
         compatible = "zmk,conditional-layers";
 
         rgb_layer_2 {
-            if-layers = <7 3>;
-            then-layer = <5>;
+            if-layers = <8 3>;
+            then-layer = <2>;
         };
 
         sym_layer_2 {
-            if-layers = <1 2>;
-            then-layer = <4>;
+            if-layers = <1 4>;
+            then-layer = <6>;
         };
     };
 
@@ -41,7 +41,7 @@
         set_game_layer: set_game_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 6 &rgb_ug RGB_COLOR_HSB(310,100,20)>;
+            bindings = <&to 5 &rgb_ug RGB_COLOR_HSB(310,100,20)>;
             label = "SET_GAME_LAYER";
         };
 
@@ -56,8 +56,8 @@
     combos {
         compatible = "zmk,combos";
 
-        sym_mo {
-            bindings = <&mo 4>;
+        sym_tog {
+            bindings = <&tog 6>;
             key-positions = <52 57>;
         };
     };
@@ -72,7 +72,7 @@
 &kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                                    &kp Y            &kp U          &kp I             &kp O       &kp P           &kp CAPS
 &kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                                    &kp H            &kp J          &kp K             &kp L       &kp APOSTROPHE  &kp RIGHT_SHIFT
 &kp LCTRL  &kp Z   &kp X     &kp C     &kp V      &kp B        &kp C_MUTE     &kp C_PLAY   &kp N            &kp M          &kp COMMA         &kp DOT     &kp SEMI        &kp RIGHT_CONTROL
-                   &kp LGUI  &kp LALT  &kp SPACE  &lt 1 SPACE  &lt 7 ENTER    &lt 3 ENTER  &lt 2 BACKSPACE  &kp BACKSPACE  &kp LEFT_CONTROL  &caps_word
+                   &kp LGUI  &kp LALT  &kp SPACE  &lt 1 SPACE  &lt 0 ENTER    &lt 3 ENTER  &lt 4 BACKSPACE  &kp BACKSPACE  &kp LEFT_CONTROL  &caps_word
             >;
 
             sensor-bindings =
@@ -93,6 +93,32 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
+        fun_layer {
+            display-name = "fun";
+            bindings = <
+&bootloader      &none              &none   &none     &none   &studio_unlock                    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &none    &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
+&kp PRINTSCREEN  &kp LC(Y)          &kp F7  &kp F8    &kp F9  &kp F10                           &kp DOT     &kp DOT       &kp DOT       &kp DOT  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI
+&kp LSHFT        &kp LC(BACKSPACE)  &kp F4  &kp F5    &kp F6  &kp F11                           &kp DOT     &kp DOT       &kp DOT       &kp DOT  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
+&kp LCTRL        &kp LC(Z)          &kp F1  &kp F2    &kp F3  &kp F12         &trans    &trans  &kp DOT     &kp DOT       &kp DOT       &kp DOT  &kp DOT          &kp LCTRL
+                                    &none   &kp LALT  &none   &trans          &trans    &trans  &trans      &kp DOT       &kp LEFT_ALT  &kp DOT
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp PG_UP PG_DN>;
+        };
+
+        mouse_layer {
+            display-name = "mouse";
+            bindings = <
+&none   &none      &none      &none      &none      &none                        &none           &none           &none           &none            &none          &bootloader
+&none   &none      &mkp RCLK  &mkp LCLK  &mkp MCLK  &none                        &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none          &none
+&trans  &kp LC(Y)  &kp LALT   &kp LCTRL  &kp LSHFT  &none                        &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp BACKSPACE  &none
+&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)  &trans    &trans  &none           &mkp LCLK       &mkp RCLK       &mkp MCLK        &kp DELETE     &none
+                   &none      &trans     &none      &trans     &trans    &trans  &trans          &none           &none           &none
+            >;
+        };
+
         nav_layer {
             display-name = "nav";
             bindings = <
@@ -104,14 +130,14 @@
             >;
         };
 
-        mouse_layer {
-            display-name = "mouse";
+        game_layer {
+            display-name = "game";
             bindings = <
-&none   &none      &none      &none      &none      &none                        &none           &none           &none           &none            &none          &bootloader
-&none   &none      &mkp RCLK  &mkp LCLK  &mkp MCLK  &none                        &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none          &none
-&trans  &kp LC(Y)  &kp LALT   &kp LCTRL  &kp LSHFT  &none                        &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp BACKSPACE  &none
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)  &trans    &trans  &none           &mkp LCLK       &mkp RCLK       &mkp MCLK        &kp DELETE     &none
-                   &none      &trans     &none      &trans     &trans    &trans  &trans          &none           &none           &none
+&kp ESC  &kp N5     &kp N1    &kp N2    &kp N3     &kp N4                                   &kp N6           &kp N7         &kp N8            &kp N9      &kp N0          &set_base_layer
+&kp T    &kp TAB    &kp Q     &kp W     &kp E      &kp R                                    &kp Y            &kp U          &kp I             &kp O       &kp P           &kp CAPS
+&kp G    &kp LSHFT  &kp A     &kp S     &kp D      &kp F                                    &kp H            &kp J          &kp K             &kp L       &kp APOSTROPHE  &kp RIGHT_SHIFT
+&kp B    &kp LCTRL  &kp Z     &kp X     &kp C      &kp V        &kp C_MUTE     &kp C_PLAY   &kp N            &kp M          &kp COMMA         &kp DOT     &kp SEMICOLON   &kp RIGHT_CONTROL
+                    &kp LGUI  &kp LALT  &kp SPACE  &lt 1 SPACE  &lt 0 ENTER    &lt 3 ENTER  &lt 4 BACKSPACE  &kp BACKSPACE  &kp LEFT_CONTROL  &caps_word
             >;
         };
 
@@ -135,32 +161,6 @@
 &studio_unlock  &none         &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none            &none            &trans    &trans  &none   &none  &none  &none  &none  &none
                               &none            &none            &none            &trans           &trans    &trans  &trans  &none  &none  &none
             >;
-        };
-
-        game_layer {
-            display-name = "game";
-            bindings = <
-&kp ESC  &kp N5     &kp N1    &kp N2    &kp N3     &kp N4                                   &kp N6           &kp N7         &kp N8            &kp N9      &kp N0          &set_base_layer
-&kp T    &kp TAB    &kp Q     &kp W     &kp E      &kp R                                    &kp Y            &kp U          &kp I             &kp O       &kp P           &kp CAPS
-&kp G    &kp LSHFT  &kp A     &kp S     &kp D      &kp F                                    &kp H            &kp J          &kp K             &kp L       &kp APOSTROPHE  &kp RIGHT_SHIFT
-&kp B    &kp LCTRL  &kp Z     &kp X     &kp C      &kp V        &kp C_MUTE     &kp C_PLAY   &kp N            &kp M          &kp COMMA         &kp DOT     &kp SEMICOLON   &kp RIGHT_CONTROL
-                    &kp LGUI  &kp LALT  &kp SPACE  &lt 1 SPACE  &lt 7 ENTER    &lt 3 ENTER  &lt 2 BACKSPACE  &kp BACKSPACE  &kp LEFT_CONTROL  &caps_word
-            >;
-        };
-
-        fun_layer {
-            display-name = "fun";
-            bindings = <
-&bootloader      &none              &none   &none     &none   &studio_unlock                    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &none    &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
-&kp PRINTSCREEN  &kp LC(Y)          &kp F7  &kp F8    &kp F9  &kp F10                           &kp DOT     &kp DOT       &kp DOT       &kp DOT  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI
-&kp LSHFT        &kp LC(BACKSPACE)  &kp F4  &kp F5    &kp F6  &kp F11                           &kp DOT     &kp DOT       &kp DOT       &kp DOT  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
-&kp LCTRL        &kp LC(Z)          &kp F1  &kp F2    &kp F3  &kp F12         &trans    &trans  &kp DOT     &kp DOT       &kp DOT       &kp DOT  &kp DOT          &kp LCTRL
-                                    &none   &kp LALT  &none   &trans          &trans    &trans  &trans      &kp DOT       &kp LEFT_ALT  &kp DOT
-            >;
-
-            sensor-bindings =
-                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
