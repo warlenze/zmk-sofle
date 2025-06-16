@@ -87,11 +87,11 @@
         num_layer {
             display-name = "num";
             bindings = <
-&none            &none      &none   &none     &none   &kp BACKSPACE                    &none     &none          &none   &none    &none      &none
-&kp PRINTSCREEN  &kp MINUS  &kp N7  &kp N8    &kp N9  &kp FSLH                         &kp FSLH  &kp N7         &kp N8  &kp N9   &kp MINUS  &none
-&kp LSHFT        &kp PLUS   &kp N4  &kp N5    &kp N6  &kp STAR                         &kp STAR  &kp N4         &kp N5  &kp N6   &kp PLUS   &none
-&kp LCTRL        &kp N0     &kp N1  &kp N2    &kp N3  &kp DOT        &trans    &trans  &kp DOT   &kp N1         &kp N2  &kp N3   &kp N0     &kp C_AL_CALC
-                            &none   &kp LALT  &none   &trans         &trans    &trans  &trans    &kp BACKSPACE  &kp N0  &kp DOT
+&none          &none      &none   &none     &none   &kp BACKSPACE                    &none     &none          &none   &none    &none      &none
+&kp BACKSPACE  &kp MINUS  &kp N7  &kp N8    &kp N9  &kp FSLH                         &kp FSLH  &kp N7         &kp N8  &kp N9   &kp MINUS  &none
+&kp LSHFT      &kp PLUS   &kp N4  &kp N5    &kp N6  &kp STAR                         &kp STAR  &kp N4         &kp N5  &kp N6   &kp PLUS   &none
+&kp LCTRL      &kp N0     &kp N1  &kp N2    &kp N3  &kp DOT        &trans    &trans  &kp DOT   &kp N1         &kp N2  &kp N3   &kp N0     &kp C_AL_CALC
+                          &none   &kp LALT  &none   &trans         &trans    &trans  &trans    &kp BACKSPACE  &kp N0  &kp DOT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -133,7 +133,7 @@
         rgb_layer {
             display-name = "rgb";
             bindings = <
-&bootloader     &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                       &none   &none  &none  &none  &none  &none
+&none           &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                       &none   &none  &none  &none  &none  &none
 &none           &bt BT_CLR    &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF                    &none   &none  &none  &none  &none  &none
 &none           &none         &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                    &none   &none  &none  &none  &none  &none
 &studio_unlock  &none         &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none            &none            &trans    &trans  &none   &none  &none  &none  &none  &none
@@ -144,22 +144,22 @@
         game_layer {
             display-name = "game";
             bindings = <
-&kp ESC  &kp N5     &kp N1    &kp N2    &kp N3     &kp N4                              &kp N6  &kp N7         &kp N8            &kp N9      &kp N0          &set_base_layer
-&kp T    &kp TAB    &kp Q     &kp W     &kp E      &kp R                               &kp Y   &kp U          &kp I             &kp O       &kp P           &kp CAPS
-&kp G    &kp LSHFT  &kp A     &kp S     &kp D      &kp F                               &kp H   &kp J          &kp K             &kp L       &kp APOSTROPHE  &kp RIGHT_SHIFT
-&kp B    &kp LCTRL  &kp Z     &kp X     &kp C      &kp V   &kp C_MUTE     &kp C_PLAY   &kp N   &kp M          &kp COMMA         &kp DOT     &kp SEMICOLON   &kp RIGHT_CONTROL
-                    &kp LGUI  &kp LALT  &kp SPACE  &mo 1   &lt 3 ENTER    &lt 5 ENTER  &mo 2   &kp BACKSPACE  &kp LEFT_CONTROL  &caps_word
+&kp ESC  &kp N5     &kp N1    &kp N2    &kp N3     &kp N4                                   &kp N6           &kp N7         &kp N8            &kp N9      &kp N0          &set_base_layer
+&kp T    &kp TAB    &kp Q     &kp W     &kp E      &kp R                                    &kp Y            &kp U          &kp I             &kp O       &kp P           &kp CAPS
+&kp G    &kp LSHFT  &kp A     &kp S     &kp D      &kp F                                    &kp H            &kp J          &kp K             &kp L       &kp APOSTROPHE  &kp RIGHT_SHIFT
+&kp B    &kp LCTRL  &kp Z     &kp X     &kp C      &kp V        &kp C_MUTE     &kp C_PLAY   &kp N            &kp M          &kp COMMA         &kp DOT     &kp SEMICOLON   &kp RIGHT_CONTROL
+                    &kp LGUI  &kp LALT  &kp SPACE  &lt 1 SPACE  &lt 7 ENTER    &lt 3 ENTER  &lt 2 BACKSPACE  &kp BACKSPACE  &kp LEFT_CONTROL  &caps_word
             >;
         };
 
         fun_layer {
             display-name = "fun";
             bindings = <
-&studio_unlock   &none              &none   &none     &none   &none                      &none    &none    &none         &none    &none    &none
-&kp PRINTSCREEN  &kp LC(Y)          &kp F7  &kp F8    &kp F9  &kp F10                    &kp DOT  &kp DOT  &kp DOT       &kp DOT  &kp DOT  &none
-&kp LSHFT        &kp LC(BACKSPACE)  &kp F4  &kp F5    &kp F6  &kp F11                    &kp DOT  &kp DOT  &kp DOT       &kp DOT  &kp DOT  &kp LSHFT
-&kp LCTRL        &kp LC(Z)          &kp F1  &kp F2    &kp F3  &kp F12  &trans    &trans  &kp DOT  &kp DOT  &kp DOT       &kp DOT  &kp DOT  &kp LCTRL
-                                    &none   &kp LALT  &none   &trans   &trans    &trans  &trans   &kp DOT  &kp LEFT_ALT  &kp DOT
+&studio_unlock   &none              &none   &none     &none   &none                      &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &none    &rgb_ug RGB_EFF  &rgb_ug RGB_TOG
+&kp PRINTSCREEN  &kp LC(Y)          &kp F7  &kp F8    &kp F9  &kp F10                    &kp DOT     &kp DOT       &kp DOT       &kp DOT  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI
+&kp LSHFT        &kp LC(BACKSPACE)  &kp F4  &kp F5    &kp F6  &kp F11                    &kp DOT     &kp DOT       &kp DOT       &kp DOT  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
+&kp LCTRL        &kp LC(Z)          &kp F1  &kp F2    &kp F3  &kp F12  &trans    &trans  &kp DOT     &kp DOT       &kp DOT       &kp DOT  &kp DOT          &kp LCTRL
+                                    &none   &kp LALT  &none   &trans   &trans    &trans  &trans      &kp DOT       &kp LEFT_ALT  &kp DOT
             >;
 
             sensor-bindings =
