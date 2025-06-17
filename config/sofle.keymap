@@ -70,11 +70,11 @@
         base_layer {
             display-name = "base";
             bindings = <
-&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                   &kp N6           &kp N7         &kp N8     &kp N9            &kp N0          &set_game_layer
-&kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                                    &kp Y            &kp U          &kp I      &kp O             &kp P           &kp CAPS
-&kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                                    &kp H            &kp J          &kp K      &kp L             &kp APOSTROPHE  &kp RIGHT_SHIFT
-&kp LCTRL  &kp Z   &kp X     &kp C     &kp V      &kp B        &kp C_MUTE     &kp C_PLAY   &kp N            &kp M          &kp COMMA  &kp DOT           &kp SEMI        &kp RIGHT_CONTROL
-                   &kp LGUI  &kp LALT  &kp SPACE  &lt 1 SPACE  &lt 2 ENTER    &lt 3 ENTER  &lt 4 BACKSPACE  &kp BACKSPACE  &kp RIGHT  &kp LEFT_CONTROL
+&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                   &kp N6           &kp N7               &kp N8     &kp N9            &kp N0          &set_game_layer
+&kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                                    &kp Y            &kp U                &kp I      &kp O             &kp P           &kp CAPS
+&kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                                    &kp H            &kp J                &kp K      &kp L             &kp APOSTROPHE  &kp RIGHT_SHIFT
+&kp LCTRL  &kp Z   &kp X     &kp C     &kp V      &kp B        &kp C_MUTE     &kp C_PLAY   &kp N            &kp M                &kp COMMA  &kp DOT           &kp SEMI        &kp RIGHT_CONTROL
+                   &kp LGUI  &kp LALT  &kp SPACE  &lt 1 SPACE  &lt 2 ENTER    &lt 3 ENTER  &lt 4 BACKSPACE  &mt BACKSPACE RIGHT  &kp RIGHT  &kp LEFT_CONTROL
             >;
 
             sensor-bindings =
@@ -85,11 +85,11 @@
         num_layer {
             display-name = "num";
             bindings = <
-&none          &none      &none    &none     &none   &kp BACKSPACE                    &none     &none          &none   &none    &none      &none
-&kp BACKSPACE  &kp MINUS  &kp N7   &kp N8    &kp N9  &kp FSLH                         &kp FSLH  &kp N7         &kp N8  &kp N9   &kp MINUS  &none
-&kp LSHFT      &kp PLUS   &kp N4   &kp N5    &kp N6  &kp STAR                         &kp STAR  &kp N4         &kp N5  &kp N6   &kp PLUS   &none
-&kp LCTRL      &kp N0     &kp N1   &kp N2    &kp N3  &kp DOT        &trans    &trans  &kp DOT   &kp N1         &kp N2  &kp N3   &kp N0     &kp C_AL_CALC
-                          &kp DOT  &kp LALT  &none   &trans         &trans    &trans  &trans    &kp BACKSPACE  &kp N0  &kp DOT
+&none          &none      &none    &none     &none   &kp BACKSPACE                    &none     &none          &kp FSLH  &kp STAR  &kp MINUS  &none
+&kp BACKSPACE  &kp PLUS   &kp N7   &kp N8    &kp N9  &kp FSLH                         &kp FSLH  &kp N7         &kp N8    &kp N9    &kp PLUS   &none
+&kp LSHFT      &kp MINUS  &kp N4   &kp N5    &kp N6  &kp STAR                         &kp STAR  &kp N4         &kp N5    &kp N6    &kp MINUS  &none
+&kp LCTRL      &kp N0     &kp N1   &kp N2    &kp N3  &kp DOT        &trans    &trans  &kp DOT   &kp N1         &kp N2    &kp N3    &kp N0     &kp C_AL_CALC
+                          &kp DOT  &kp LALT  &none   &trans         &trans    &trans  &trans    &kp BACKSPACE  &kp N0    &kp DOT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -146,19 +146,19 @@
         sym_layer {
             display-name = "sym";
             bindings = <
-&none   &none            &none          &none             &none          &none                          &none       &none              &none                  &none                 &none              &none
-&none   &kp HASH         &kp ASTERISK   &kp SLASH         &kp PIPE       &kp CARET                      &kp DOLLAR  &kp DOUBLE_QUOTES  &kp RIGHT_BRACE        &kp LEFT_BRACE        &kp DOUBLE_QUOTES  &none
-&trans  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL      &kp PERCENT                    &kp HASH    &kp AT             &kp RIGHT_PARENTHESIS  &kp LEFT_PARENTHESIS  &kp QUESTION       &none
-&trans  &kp BACKSLASH    &kp LESS_THAN  &kp GREATER_THAN  &kp AMPERSAND  &kp TILDE    &trans    &trans  &kp AT      &kp UNDER          &kp RIGHT_BRACKET      &kp LEFT_BRACKET      &kp COLON          &none
-                         &none          &trans            &none          &trans       &trans    &trans  &trans      &none              &none                  &none
+&none   &none          &none          &none             &none          &none                        &none       &none          &none                  &none                 &none              &none
+&none   &kp PLUS       &kp LESS_THAN  &kp GREATER_THAN  &kp PIPE       &kp FSLH                     &kp HASH    &kp PERCENT    &kp RIGHT_BRACE        &kp LEFT_BRACE        &kp DOLLAR         &none
+&trans  &kp MINUS      &kp QUESTION   &kp EXCL          &kp EQUAL      &kp STAR                     &kp AT      &kp SEMICOLON  &kp RIGHT_PARENTHESIS  &kp LEFT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp BACKSPACE
+&trans  &kp BACKSLASH  &kp CARET      &kp PERCENT       &kp AMPERSAND  &kp TILDE  &trans    &trans  &kp DOLLAR  &kp UNDER      &kp RIGHT_BRACKET      &kp LEFT_BRACKET      &kp COLON          &none
+                       &none          &trans            &none          &trans     &trans    &trans  &trans      &none          &none                  &none
             >;
         };
 
         rgb_layer {
             display-name = "rgb";
             bindings = <
-&none           &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                       &none   &none  &none  &none  &none  &none
-&none           &bt BT_CLR    &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF                    &none   &none  &none  &none  &none  &none
+&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                       &none   &none  &none  &none  &none  &none
+&none           &none         &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF                    &none   &none  &none  &none  &none  &none
 &none           &none         &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                    &none   &none  &none  &none  &none  &none
 &studio_unlock  &none         &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none            &none            &trans    &trans  &none   &none  &none  &none  &none  &none
                               &none            &none            &none            &trans           &trans    &trans  &trans  &none  &none  &none
