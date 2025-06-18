@@ -70,11 +70,11 @@
         base_layer {
             display-name = "base";
             bindings = <
-&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                   &kp N6           &kp N7               &kp N8     &kp N9            &kp N0          &set_game_layer
-&kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                                    &kp Y            &kp U                &kp I      &kp O             &kp P           &kp CAPS
-&kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                                    &kp H            &kp J                &kp K      &kp L             &kp APOSTROPHE  &kp RIGHT_SHIFT
-&kp LCTRL  &kp Z   &kp X     &kp C     &kp V      &kp B        &kp C_MUTE     &kp C_PLAY   &kp N            &kp M                &kp COMMA  &kp DOT           &kp SEMI        &kp RIGHT_CONTROL
-                   &kp LGUI  &kp LALT  &kp SPACE  &lt 1 SPACE  &lt 2 ENTER    &lt 3 ENTER  &lt 4 BACKSPACE  &mt BACKSPACE RIGHT  &kp RIGHT  &kp LEFT_CONTROL
+&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                   &kp N6           &kp N7     &kp N8     &kp N9            &kp N0                        &set_game_layer
+&kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                                    &kp Y            &kp U      &kp I      &kp O             &kp P                         &kp CAPS
+&kp LSHFT  &kp A   &kp S     &kp D     &kp F      &kp G                                    &kp H            &kp J      &kp K      &kp L             &mt APOSTROPHE DOUBLE_QUOTES  &kp RIGHT_SHIFT
+&kp LCTRL  &kp Z   &kp X     &kp C     &kp V      &kp B        &kp C_MUTE     &kp C_PLAY   &kp N            &kp M      &kp COMMA  &kp DOT           &mt SEMI COLON                &kp RIGHT_CONTROL
+                   &kp LGUI  &kp LALT  &kp SPACE  &lt 1 SPACE  &lt 2 ENTER    &lt 3 ENTER  &lt 4 BACKSPACE  &kp RIGHT  &kp RIGHT  &kp LEFT_CONTROL
             >;
 
             sensor-bindings =
@@ -85,11 +85,11 @@
         num_layer {
             display-name = "num";
             bindings = <
-&none          &none      &none    &none     &none   &kp BACKSPACE                    &none     &none          &kp FSLH  &kp STAR  &kp MINUS  &none
-&kp BACKSPACE  &kp PLUS   &kp N7   &kp N8    &kp N9  &kp FSLH                         &kp FSLH  &kp N7         &kp N8    &kp N9    &kp PLUS   &none
-&kp LSHFT      &kp MINUS  &kp N4   &kp N5    &kp N6  &kp STAR                         &kp STAR  &kp N4         &kp N5    &kp N6    &kp MINUS  &none
-&kp LCTRL      &kp N0     &kp N1   &kp N2    &kp N3  &kp DOT        &trans    &trans  &kp DOT   &kp N1         &kp N2    &kp N3    &kp N0     &kp C_AL_CALC
-                          &kp DOT  &kp LALT  &none   &trans         &trans    &trans  &trans    &kp BACKSPACE  &kp N0    &kp DOT
+&none          &none      &none    &kp BACKSPACE  &none   &kp BACKSPACE                    &none     &none   &kp FSLH  &kp STAR  &kp MINUS  &none
+&kp BACKSPACE  &kp PLUS   &kp N7   &kp N8         &kp N9  &kp FSLH                         &kp FSLH  &kp N7  &kp N8    &kp N9    &kp PLUS   &none
+&kp LSHFT      &kp MINUS  &kp N4   &kp N5         &kp N6  &kp STAR                         &kp STAR  &kp N4  &kp N5    &kp N6    &kp MINUS  &none
+&kp LCTRL      &kp DOT    &kp N1   &kp N2         &kp N3  &kp DOT        &trans    &trans  &kp DOT   &kp N1  &kp N2    &kp N3    &kp DOT    &kp C_AL_CALC
+                          &kp DOT  &kp N0         &kp N0  &trans         &trans    &trans  &kp BSPC  &kp N0  &kp N0    &kp DOT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -114,8 +114,8 @@
             display-name = "mouse";
             bindings = <
 &none   &none      &none      &none      &none      &none                        &none           &none           &none           &none            &none          &bootloader
-&none   &kp ESC    &mkp RCLK  &mkp LCLK  &mkp MCLK  &none                        &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none          &none
-&trans  &kp LC(Y)  &kp LALT   &kp LCTRL  &kp LSHFT  &none                        &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp BACKSPACE  &none
+&none   &kp ESC    &mkp RCLK  &mkp LCLK  &mkp MCLK  &kp FSLH                     &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &kp ESC        &none
+&trans  &kp LC(Y)  &kp LALT   &kp LCTRL  &kp LSHFT  &kp STAR                     &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp BACKSPACE  &none
 &trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)  &trans    &trans  &none           &mkp LCLK       &mkp RCLK       &mkp MCLK        &kp DELETE     &none
                    &none      &trans     &none      &trans     &trans    &trans  &trans          &none           &none           &none
             >;
@@ -125,8 +125,8 @@
             display-name = "nav";
             bindings = <
 &kp ESC  &none      &none         &none      &none      &none                        &trans     &trans         &trans      &trans     &trans         &trans
-&trans   &kp ESC    &kp ASTERISK  &kp SLASH  &none      &none                        &kp PG_UP  &kp HOME       &kp UP      &kp END    &none          &trans
-&trans   &kp LC(Y)  &kp LALT      &kp LCTRL  &kp LSHFT  &none                        &kp PG_DN  &kp LEFT       &kp DOWN    &kp RIGHT  &kp BACKSPACE  &trans
+&trans   &kp ESC    &kp ASTERISK  &kp SLASH  &none      &kp FSLH                     &kp PG_UP  &kp HOME       &kp UP      &kp END    &kp ESC        &trans
+&trans   &kp LC(Y)  &kp LALT      &kp LCTRL  &kp LSHFT  &kp STAR                     &kp PG_DN  &kp LEFT       &kp DOWN    &kp RIGHT  &kp BACKSPACE  &trans
 &trans   &kp LC(Z)  &kp LC(X)     &kp LC(C)  &kp LC(V)  &kp LC(Y)  &trans    &trans  &none      &kp BACKSPACE  &kp DELETE  &none      &kp DELETE     &trans
                     &trans        &trans     &none      &trans     &trans    &trans  &trans     &none          &trans      &trans
             >;
