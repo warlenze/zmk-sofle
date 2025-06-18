@@ -157,12 +157,29 @@
         rgb_layer {
             display-name = "rgb";
             bindings = <
-&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                       &none   &none  &none  &none  &none  &none
+&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                       &to 8   &none  &none  &none  &none  &none
 &none           &none         &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF                    &none   &none  &none  &none  &none  &none
 &none           &none         &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                    &none   &none  &none  &none  &none  &none
 &studio_unlock  &none         &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &none            &none            &trans    &trans  &none   &none  &none  &none  &none  &none
                               &none            &none            &none            &trans           &trans    &trans  &trans  &none  &none  &none
             >;
+        };
+
+        engrammer {
+            display-name = "base";
+            bindings = <
+&kp ESC    &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                   &kp N6           &kp N7     &kp N8     &kp N9            &kp N0  &to 0
+&kp TAB    &kp B   &kp Y     &kp O     &kp U      &kp SQT                                  &kp SEMI         &kp L      &kp D      &kp W             &kp V   &kp Z
+&kp B      &kp C   &kp I     &kp E     &kp A      &kp COMMA                                &kp DOT          &kp H      &kp T      &kp N             &kp S   &kp Q
+&kp LCTRL  &kp G   &kp X     &kp J     &kp K      &kp MINUS    &kp C_MUTE     &kp C_PLAY   &kp FSLH         &kp R      &kp M      &kp F             &kp P   &kp RIGHT_CONTROL
+                   &kp LGUI  &kp LALT  &kp SPACE  &lt 1 SPACE  &lt 2 ENTER    &lt 3 ENTER  &lt 4 BACKSPACE  &kp RIGHT  &kp RIGHT  &kp LEFT_CONTROL
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp C_NEXT C_PREVIOUS>;
+
+            label = "eng";
         };
     };
 };
