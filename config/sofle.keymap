@@ -166,7 +166,7 @@
         };
 
         engrammer {
-            display-name = "base";
+            display-name = "engrammer";
             bindings = <
 &kp ESC    &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                   &kp N6           &kp N7     &kp N8     &kp N9            &kp N0  &to 0
 &kp TAB    &kp B   &kp Y     &kp O     &kp U      &kp SQT                                  &kp SEMI         &kp L      &kp D      &kp W             &kp V   &kp Z
@@ -183,7 +183,7 @@
         };
 
         qwerty {
-            display-name = "base";
+            display-name = "qwerty";
             bindings = <
 &kp ESC    &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                   &kp N6           &kp N7     &kp N8     &kp N9            &kp N0    &to 0
 &kp TAB    &kp Q   &kp W     &kp E     &kp R      &kp T                                    &kp Y            &kp U      &kp I      &kp O             &kp P     &kp CAPS
