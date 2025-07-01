@@ -99,6 +99,20 @@
             #binding-cells = <0>;
             bindings = <&kp LSHIFT>, <&kp CAPS>;
         };
+
+        taptest: taptest {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPTEST";
+            #binding-cells = <0>;
+            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+        };
+
+        taptest2: taptest2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPTEST2";
+            #binding-cells = <0>;
+            bindings = <&to 4>, <&to 5>, <&to 0>;
+        };
     };
 
     keymap {
@@ -107,11 +121,11 @@
         base_layer {
             display-name = "base";
             bindings = <
-&kp ESC               &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                   &kp N6           &kp N7     &kp N8     &kp N9            &kp N0                  &set_game_layer
-&mt LEFT_CONTROL TAB  &kp Q   &kp W     &kp E     &kp R      &kp T                                    &kp Y            &kp U      &kp I      &kp O             &kp P                   &kp CAPS
-&taptap               &kp A   &kp S     &kp D     &kp F      &kp G                                    &kp H            &kp J      &kp K      &kp L             &mt DOUBLE_QUOTES APOS  &taptap
-&kp LCTRL             &kp Z   &kp X     &kp C     &kp V      &kp B        &kp C_MUTE     &kp C_PP     &kp N            &kp M      &kp COMMA  &kp DOT           &mt COLON SEMI          &kp RIGHT_CONTROL
-                              &kp LGUI  &kp LALT  &kp SPACE  &lt 4 SPACE  &lt 5 ENTER    &lt 6 ENTER  &lt 7 BACKSPACE  &kp RIGHT  &kp RIGHT  &kp LEFT_CONTROL
+&kp ESC               &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                   &kp N6           &kp N7     &kp N8     &kp N9     &kp N0                  &set_game_layer
+&mt LEFT_CONTROL TAB  &kp Q   &kp W     &kp E     &kp R      &kp T                                    &kp Y            &kp U      &kp I      &kp O      &kp P                   &kp CAPS
+&taptap               &kp A   &kp S     &kp D     &kp F      &kp G                                    &kp H            &kp J      &kp K      &kp L      &mt DOUBLE_QUOTES APOS  &taptap
+&kp LCTRL             &kp Z   &kp X     &kp C     &kp V      &kp B        &kp C_MUTE     &kp C_PP     &kp N            &kp M      &kp COMMA  &kp DOT    &mt COLON SEMI          &kp RIGHT_CONTROL
+                              &kp LGUI  &kp LALT  &kp SPACE  &lt 4 SPACE  &lt 5 ENTER    &lt 6 ENTER  &lt 7 BACKSPACE  &kp RIGHT  &taptest   &taptest2
             >;
 
             sensor-bindings =
