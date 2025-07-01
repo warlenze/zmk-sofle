@@ -98,20 +98,33 @@
             label = "TAPTAP";
             #binding-cells = <0>;
             bindings = <&kp LSHIFT>, <&kp CAPS>;
+
+            tapping-term-ms = <400>;
         };
 
-        taptest: taptest {
+        tap_shift_caps_capsword: tap_shift_caps_capsword {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAPTEST";
+            label = "TAP_SHIFT_CAPS_CAPSWORD";
             #binding-cells = <0>;
-            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+            bindings = <&sk LEFT_SHIFT>, <&kp CAPSLOCK>, <&caps_word>;
+
+            tapping-term-ms = <400>;
         };
 
-        taptest2: taptest2 {
+        tap_layers: tap_layers {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAPTEST2";
+            label = "TAP_LAYERS";
             #binding-cells = <0>;
             bindings = <&to 4>, <&to 5>, <&to 0>;
+        };
+
+        tap_123: tap_123 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_123";
+            #binding-cells = <0>;
+            bindings = <&sk N1>, <&kp N2>, <&sk N3>;
+
+            tapping-term-ms = <400>;
         };
     };
 
@@ -121,11 +134,11 @@
         base_layer {
             display-name = "base";
             bindings = <
-&kp ESC               &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                   &kp N6           &kp N7     &kp N8     &kp N9     &kp N0                  &set_game_layer
-&mt LEFT_CONTROL TAB  &kp Q   &kp W     &kp E     &kp R      &kp T                                    &kp Y            &kp U      &kp I      &kp O      &kp P                   &kp CAPS
-&taptap               &kp A   &kp S     &kp D     &kp F      &kp G                                    &kp H            &kp J      &kp K      &kp L      &mt DOUBLE_QUOTES APOS  &taptap
-&kp LCTRL             &kp Z   &kp X     &kp C     &kp V      &kp B        &kp C_MUTE     &kp C_PP     &kp N            &kp M      &kp COMMA  &kp DOT    &mt COLON SEMI          &kp RIGHT_CONTROL
-                              &kp LGUI  &kp LALT  &kp SPACE  &lt 4 SPACE  &lt 5 ENTER    &lt 6 ENTER  &lt 7 BACKSPACE  &kp RIGHT  &taptest   &taptest2
+&kp ESC                   &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                                   &kp N6           &kp N7     &kp N8     &kp N9       &kp N0                  &set_game_layer
+&mt LEFT_CONTROL TAB      &kp Q   &kp W     &kp E     &kp R      &kp T                                    &kp Y            &kp U      &kp I      &kp O        &kp P                   &kp CAPS
+&tap_shift_caps_capsword  &kp A   &kp S     &kp D     &kp F      &kp G                                    &kp H            &kp J      &kp K      &kp L        &mt DOUBLE_QUOTES APOS  &tap_shift_caps_capsword
+&kp LCTRL                 &kp Z   &kp X     &kp C     &kp V      &kp B        &kp C_MUTE     &kp C_PP     &kp N            &kp M      &kp COMMA  &kp DOT      &mt COLON SEMI          &kp RIGHT_CONTROL
+                                  &kp LGUI  &kp LALT  &kp SPACE  &lt 4 SPACE  &lt 5 ENTER    &lt 6 ENTER  &lt 7 BACKSPACE  &kp RIGHT  &tap_123   &tap_layers
             >;
 
             sensor-bindings =
@@ -183,7 +196,7 @@
             bindings = <
 &none          &none      &none    &kp DEL  &none   &none                       &none     &none   &kp FSLH  &kp STAR  &kp MINUS  &none
 &kp BACKSPACE  &kp PLUS   &kp N7   &kp N8   &kp N9  &kp FSLH                    &kp FSLH  &kp N7  &kp N8    &kp N9    &kp PLUS   &none
-&kp LSHFT      &kp MINUS  &kp N4   &kp N5   &kp N6  &kp STAR                    &kp STAR  &kp N4  &kp N5    &kp N6    &kp MINUS  &none
+&kp BACKSPACE  &kp MINUS  &kp N4   &kp N5   &kp N6  &kp STAR                    &kp STAR  &kp N4  &kp N5    &kp N6    &kp MINUS  &none
 &kp LCTRL      &kp DOT    &kp N1   &kp N2   &kp N3  &kp DOT   &trans    &trans  &kp DOT   &kp N1  &kp N2    &kp N3    &kp DOT    &kp C_AL_CALC
                           &kp DOT  &kp N0   &kp N0  &trans    &trans    &trans  &trans    &kp N0  &kp N0    &kp DOT
             >;
