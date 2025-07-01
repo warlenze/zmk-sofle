@@ -106,7 +106,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_SHIFT_CAPS_CAPSWORD";
             #binding-cells = <0>;
-            bindings = <&sk LEFT_SHIFT>, <&kp CAPSLOCK>, <&caps_word>;
+            bindings = <&sk_press LEFT_SHIFT>, <&kp CAPSLOCK>, <&caps_word>;
 
             tapping-term-ms = <400>;
         };
@@ -125,6 +125,16 @@
             bindings = <&sk N1>, <&kp N2>, <&sk N3>;
 
             tapping-term-ms = <400>;
+        };
+
+        sk_press: sk_press {
+            compatible = "zmk,behavior-sticky-key";
+            label = "SK_PRESS";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
         };
     };
 
