@@ -217,11 +217,11 @@
         fun_layer {
             display-name = "fun";
             bindings = <
-&bootloader      &kp F1     &kp F2        &kp F3            &kp F4          &kp F5                             &kp F6   &kp F7     &kp F8        &kp F9    &kp F10  &kp F11
-&kp PRINTSCREEN  &kp LC(Y)  &kp F10       &kp F11           &kp F12         &kp F9                             &kp DOT  &kp DOT    &kp DOT       &kp DOT   &kp DOT  &kp F12
-&kp RET          &kp LC(A)  &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &kp F5                             &kp DOT  &sk LSHFT  &sk LCTRL     &sk LALT  &kp DOT  &kp LSHFT
-&kp LCTRL        &kp LC(Z)  &kp LC(X)     &kp LC(C)         &kp LC(V)       &kp PRINTSCREEN  &trans    &trans  &kp DOT  &kp DOT    &kp DOT       &kp DOT   &kp DOT  &kp LCTRL
-                            &none         &kp LALT          &none           &trans           &trans    &trans  &trans   &kp DOT    &kp LEFT_ALT  &kp DOT
+&bootloader      &kp F1     &kp F2        &kp F3            &kp F4          &kp F5                             &kp F6   &kp F7     &kp F8     &kp F9    &kp F10  &kp F11
+&kp PRINTSCREEN  &kp LC(Y)  &kp F10       &kp F11           &kp F12         &kp F9                             &kp DOT  &kp DOT    &kp DOT    &kp DOT   &kp DOT  &kp F12
+&kp RET          &kp LC(A)  &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &kp F5                             &kp DOT  &sk LSHFT  &sk LCTRL  &sk LALT  &kp DOT  &kp LSHFT
+&kp LCTRL        &kp LC(Z)  &kp LC(X)     &kp LC(C)         &kp LC(V)       &kp PRINTSCREEN  &trans    &trans  &kp DOT  &kp DOT    &kp DOT    &kp DOT   &kp DOT  &kp LCTRL
+                            &none         &kp LALT          &none           &trans           &trans    &trans  &trans   &kp DOT    &trans     &kp DOT
             >;
 
             sensor-bindings =
